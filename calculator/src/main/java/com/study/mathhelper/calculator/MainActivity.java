@@ -30,27 +30,27 @@ public class MainActivity extends Activity {
         return true;
     }
     static boolean isempty=true;
-    public void num_Clicked(View send)
+    public void numberClicked(View send)
     {
-        Button bt=(Button)send;
+        Button sendButton=(Button)send;
         if(field.getText().length()>7)return;
         if(isempty)
         {
-            field.setText(bt.getText());
+            field.setText(sendButton.getText());
             isempty=false;
         }
         else
         {
-            field.append(bt.getText());
+            field.append(sendButton.getText());
         }
     }
 
 
     static int collector=0;
     static int toDo=0;
-    public void op_Clicked(View send)
+    public void operatorClicked(View send)
     {
-        Button bt=(Button)send;
+        Button sendButton=(Button)send;
         switch (toDo)
         {
             case 0:
@@ -93,14 +93,14 @@ public class MainActivity extends Activity {
             break;
         }
         field.setText(Integer.toString(collector));
-        if(bt.getText().toString().equals("+")) toDo=0;
-        if(bt.getText().toString().equals("-")) toDo=1;
-        if(bt.getText().toString().equals("/")) toDo=2;
-        if(bt.getText().toString().equals("*")) toDo=3;
-        if(bt.getText().toString().equals("=")) toDo=4;
-        if(bt.getText().toString().equals("C")) toDo=5;
-        if(bt.getText().toString().equals("Undo")) toDo=6;
-        if(bt.getText().toString().equals("+-")) toDo=7;
+        if(sendButton.getText().toString().equals("+")) toDo=0;
+        if(sendButton.getText().toString().equals("-")) toDo=1;
+        if(sendButton.getText().toString().equals("/")) toDo=2;
+        if(sendButton.getText().toString().equals("*")) toDo=3;
+        if(sendButton.getText().toString().equals("=")) toDo=4;
+        if(sendButton.getText().toString().equals("C")) toDo=5;
+        if(sendButton.getText().toString().equals("Undo")) toDo=6;
+        if(sendButton.getText().toString().equals("+-")) toDo=7;
         isempty=true;
 
     }
